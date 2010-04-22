@@ -1,0 +1,94 @@
+From cantrell.org.uk@googlemail.com Thu Apr 22 12:53:34 2010
+Return-path: <cantrell.org.uk@googlemail.com>
+Envelope-to: david@cantrell.org.uk
+Delivery-date: Thu, 22 Apr 2010 12:53:34 +0100
+Received: from rose.clues.ltd.uk ([93.190.169.34])
+	by bytemark.barnyard.co.uk with esmtp (Exim 4.50)
+	id 1O4uyM-0002TL-BY
+	for david@cantrell.org.uk; Thu, 22 Apr 2010 12:53:34 +0100
+Received: from mail-ww0-f45.google.com ([74.125.82.45])
+	by rose.clues.ltd.uk with esmtp (Exim 4.71)
+	(envelope-from <cantrell.org.uk@googlemail.com>)
+	id 1O4uyJ-0004dy-Pb
+	for david@cantrell.org.uk; Thu, 22 Apr 2010 12:53:34 +0100
+Received: by wwd20 with SMTP id 20so689934wwd.32
+        for <david@cantrell.org.uk>; Thu, 22 Apr 2010 04:53:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=googlemail.com; s=gamma;
+        h=domainkey-signature:received:received:message-id:from:to
+         :content-type:content-transfer-encoding:x-mailer:mime-version
+         :subject:date;
+        bh=HcJBR+wXWlG7zKaFG4eFh8gF0H+lIy/0puMmWsORs9k=;
+        b=CaokG/f6qxk5mD/1DowfflStPpeTOh+PXQWM3tYU7Y2CxBtuP5Mw7HYApv9thuNISI
+         jdB9OKYEAc11UEizqZFX2oq96CRxCZj6oeB2Z33fxfLYtbdbXDf9rTe35ZFnwq6bbagC
+         v0VzvCfDkzDVSk+odXsoZgWH1nHfLU0Ptu3cU=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=googlemail.com; s=gamma;
+        h=message-id:from:to:content-type:content-transfer-encoding:x-mailer
+         :mime-version:subject:date;
+        b=QI0IqZSLSGLv/MYhlsqYPRuSgboGlQ6dfMIxx3l7Bb0RAkMr6+ScEePaBV4JqyAFs6
+         OOdTbDeys5A/P5VBKmr02q30KOaryWl4iQjXePSq0zhtJRjcJ37yXTSxP0b/5WuBwV5r
+         f9hwsZDwNJFTzxADnmBp30fS0JuYNH5Bvk/Bk=
+Received: by 10.216.175.142 with SMTP id z14mr1074390wel.73.1271937203182;
+        Thu, 22 Apr 2010 04:53:23 -0700 (PDT)
+Received: from [10.28.215.37] ([82.132.248.43])
+        by mx.google.com with ESMTPS id v59sm2317485wec.3.2010.04.22.04.53.17
+        (version=TLSv1/SSLv3 cipher=RC4-MD5);
+        Thu, 22 Apr 2010 04:53:21 -0700 (PDT)
+Message-Id: <FF04CF91-A03F-4961-AAE7-9D77EA759730@gmail.com>
+From: "David Cantrell (outgoing mail only)" <cantrell.org.uk@googlemail.com>
+To: David Cantrell <david@cantrell.org.uk>
+Content-Type: text/plain;
+	charset=us-ascii;
+	format=flowed;
+	delsp=yes
+Content-Transfer-Encoding: 7bit
+X-Mailer: iPhone Mail (7D11)
+Mime-Version: 1.0 (iPhone Mail 7D11)
+Subject: 2010-04-21a w variarions
+Date: Thu, 22 Apr 2010 12:53:31 +0100
+Content-Length: 1740
+Lines: 41
+
+(;GM[1]FF[4]SZ[19]AP[SmartGo Pro:1.5.1]
+GN[2010-04-21a]
+PW[Cantrell, David]
+PB[Cawley, Piers]
+DT[2010-04-21]
+KM[6.5]
+RU[Japanese Rules]CH[1];B[pd];W[dp];B[pp];W[dd];B[pj];W[nq];B[kp];W 
+[kr];B[np]
+;W[oq];B[pq];W[hq];B[jd];W[dj];B[jj];W[mp];B[mo];W[no];B[nn];W[lo];B[oo]
+;W[lp];B[ln];W[ko];B[qc];W[gd];B[cn];W[cp];B[ck];W[cj];B[dk];W[ek];B[el]
+;W[dl];B[ej];W[fk];B[cl];W[dm];B[dn];W[em];B[bj];W[bi];B[ak];W[cm];B[bm]
+;W[bl];B[bk];W[bn];B[ei];W[ci];B[fl];W[fm];B[gl];W[gj];B[gm];W[fn];B[gn]
+;W[fo];B[gi];W[hj];B[hi];W[ik];B[fj];W[gk];B[ij];W[hk];B[jk];W[il];B[im]
+;W[jl];B[kl];W[jm];B[jn]
+(;W[kn];B[km];W[qj];B[qi];W[qk];B[ri];W[qn];B[qo];W[pn];B[op];W[pk];B 
+[oj]
+;W[ro];B[rp];W[rn];B[sl];W[sm];B[sj];W[rl];B[sk];W[so];B[sp];W[lm];B[ll]
+;W[mm];B[mn];W[ml];B[lj];W[on];B[nm];W[nl];B[om];W[ol];B[pm];W[qm];B[jp]
+;W[kq];B[jo];W[mr];B[gp];W[go];B[hp];W[ho];B[fp];W[ep];B[am];W[bo];B[fq]
+;W[iq];B[ip];W[er];B[jc];W[rr];B[sr];W[rq];B[rs];W[qq];B[pr];W[qp];B[dg]
+;W[dh];B[eh];W[cg];B[df];W[cf];B[ce];W[de];B[be];W[bf];B[bh];W[ah];B[ag]
+;W[ai];B[bg];W[bd];B[cc];W[cd];B[ae];W[ad];B[ff];W[mj];B[mi];W[lk];B[kk]
+;W[li];B[mk];W[nj];B[nk];W[ni];B[ok];W[pl];B[mh];W[pi];B[ph];W[oi];B[lk]
+;W[lh];B[mg];W[hf];B[jg];W[jf];B[kf];W[ig];B[ih];W[ib];B[hc];W[ic];B[hd]
+;W[id];B[he];W[ie];B[ge];W[gb];B[hb];W[ha];B[gc];W[fb];B[fc];W[ec];B[ed]
+;W[dc];B[ga];W[ia];B[jb];W[ja];B[lb];W[hh];B[eb];W[fa];B[ea];W[ga];B[ka]
+;W[je];B[ke];W[if];B[hg];W[db])
+(;W[in];B[hl];W[hm])
+(;W[km]
+(;B[kn];W[lm])
+(;B[lm];W[kn])))
+
+
+
+-- 
+David Cantrell
+
+This electrogram was despatched by wireless field telegraph. I would  
+therefore ask that the recipient be so kind as to excuse any failures  
+of courtesy or linguistic inelegance as an unfortunate side-effect of  
+the technology.
+
