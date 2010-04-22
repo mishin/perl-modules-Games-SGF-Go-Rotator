@@ -4,7 +4,10 @@ use strict;
 use warnings;
 
 use base 'Games::SGF::Go';
+use vars qw($VERSION);
+$VERSION = '1.0';
 
+use Scalar::Util qw(blessed);
 use Games::SGF::Util;
 
 =head1 NAME
@@ -50,7 +53,23 @@ sub rotate90 {
   my $self = shift;
   my $util = Games::SGF::Util->new($self);
 
-  ...
+  # algorithm:
+  #
+  # consider a square NxN board ...
+  #
+  #   01234    Each 90 degree rotation moves W to X to Y to Z.
+  # 0 .W...    So (x1, y1) => (N-y1, x1)
+  # 1 ....X
+  # 2 .....
+  # 3 Z....
+  # 4 ...Y.
+  
+  $util->filter($_, sub {
+    my $coord = shift;
+    my($x, $y) = @{$coord};
+    # 18 == 19 - 1 # FIXME get this form the SZ tag
+    return bless([18 - $y, $x], blessed($coord));
+  }) foreach(qw(B W));
 
   return $self;
 }
