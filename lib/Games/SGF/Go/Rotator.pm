@@ -7,9 +7,6 @@ use base 'Games::SGF::Go';
 use vars qw($VERSION);
 $VERSION = '1.0';
 
-use Scalar::Util qw(blessed);
-use Games::SGF::Util;
-
 =head1 NAME
 
 Games::SGF::Go::Rotator - subclass of Games::SGF::Go that can rotate the board
@@ -51,27 +48,38 @@ Rotate the SGF through 90 degrees clockwise.
 
 sub rotate90 {
   my $self = shift;
-  my $util = Games::SGF::Util->new($self);
+  my $text = $self->writeText();
 
-  # algorithm:
-  #
-  # consider a square NxN board ...
-  #
-  #   01234    Each 90 degree rotation moves W to X to Y to Z.
-  # 0 .W...    So (x1, y1) => (N-y1, x1)
-  # 1 ....X
-  # 2 .....
-  # 3 Z....
-  # 4 ...Y.
-  
-  $util->filter($_, sub {
-    my $coord = shift;
-    my($x, $y) = @{$coord};
-    # 18 == 19 - 1 # FIXME get this form the SZ tag
-    return bless([18 - $y, $x], blessed($coord));
-  }) foreach(qw(B W));
+  (my $size = $text) =~ s/.*SZ\[(\d+)\].*/$1/gs;
+
+  $text =~ s/([BW])\[([a-z])([a-z])\]/$1."["._rotate90($2, $3, $size)."]"/eg;
+
+  $self->readText($text);
+
+  # ick, diving into the guts - readText adds a new game, this
+  # deletes the first game
+  shift @{$self->{collection}};
 
   return $self;
+}
+
+# algorithm:
+# consider a square NxN board ...
+#   abcde    Each 90 degree rotation moves W to X to Y to Z.
+# a .W...    So (x1, y1) => (N-y1, x1)
+# b ....X
+# c .....
+# d Z....
+# e ...Y.
+sub _rotate90 {
+  my($x, $y, $size) = @_;
+  my @letters = (qw(a b c d e f g h i j k l m n o p q r s))[0 .. $size - 1];
+  my %letter_to_number = map { $letters[$_] => $_ } (0 .. $size - 1);
+  ($x, $y) = map { $letter_to_number{$_} } ($x, $y);
+
+  ($x, $y) = (($size - 1) - $y, $x);
+
+  return join('', map { $letters[$_] } ($x, $y));
 }
 
 =head1 BUGS and FEEDBACK
@@ -82,6 +90,14 @@ and should include the smallest possible chunk of code, along with
 any necessary data, which demonstrates the bug.  Ideally, this
 will be in the form of a file which I can drop in to the module's
 test suite.
+
+Rotating a game will probably reset the pointer used when navigating
+around the file.  This doesn't matter to me.  If it matters to you,
+then please submit a patch with tests.
+
+If you have multiple games in a single file, it will probably screw
+up.  Again, I don't care.  If you care, then please submit a patch
+with tests.
 
 =head1 SEE ALSO
 

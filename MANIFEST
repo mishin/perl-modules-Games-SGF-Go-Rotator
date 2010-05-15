@@ -1,0 +1,14 @@
+ARTISTIC.txt
+CHANGES
+GPL2.txt
+lib/Games/SGF/Go/Rotator.pm
+Makefile.PL
+MANIFEST
+README
+t/00-rotate.t
+t/2010-04-21a-with-variations-180.sgf
+t/2010-04-21a-with-variations-90.sgf
+t/2010-04-21a-with-variations.sgf
+t/pod-coverage.t
+t/pod.t
+bin/sgfrotate
