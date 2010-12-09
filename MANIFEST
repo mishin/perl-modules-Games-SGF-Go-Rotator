@@ -6,9 +6,14 @@ Makefile.PL
 MANIFEST
 README
 t/00-rotate.t
-t/2010-04-21a-with-variations-180.sgf
-t/2010-04-21a-with-variations-90.sgf
-t/2010-04-21a-with-variations.sgf
 t/pod-coverage.t
 t/pod.t
 bin/sgfrotate
+t/AE-AB-AW.sgf
+t/normal-game-180.sgf
+t/normal-game-90.sgf
+t/normal-game.sgf
+t/01-AE-AB-AW.t
+t/AE-AB-AW-180.sgf
+t/AE-AB-AW-90.sgf
+t/AE-AB-AW.sgf

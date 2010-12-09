@@ -5,7 +5,7 @@ use warnings;
 
 use base 'Games::SGF::Go';
 use vars qw($VERSION);
-$VERSION = '1.1';
+$VERSION = '1.2';
 
 =head1 NAME
 
@@ -52,15 +52,17 @@ sub rotate90 {
 
   (my $size = $text) =~ s/.*SZ\[(\d+)\].*/$1/gs;
 
-  # $text =~ s/([BW])\[([a-z])([a-z])\]/$1."["._rotate90($2, $3, $size)."]"/eg;
-
-  # doing this instead rotates stuff like AB[aa:ee]AE[bb:dd] as well
-  $text =~ s/\[([a-z][a-z])([\]:])/'['._rotate90(_splitcoord($1), $size).$2/eg;
-  # but now we have to "unrotate" what we turned C[oh] into
-  my $target = _rotate90(_splitcoord('oh'), $size);
-  $text =~ s/C\[$target\]/'C['.
-              _rotate90(_splitcoord(_rotate90(_splitcoord(_rotate90(_splitcoord($target), $size)), $size)), $size)
-            .']'/eg;
+  # first rotate any [AA] apart from C[AA]
+  $text =~ s/([^C])\[([a-z]{2})]/"${1}["._rotate90(_splitcoord($2), $size).']'/eg;
+  # now rotate any A{B,E,W}[AA:AA]
+  # note this is the only place where [AA:AA] is legal in Go
+  $text =~ s/A([BEW])\[([a-z]{2}):([a-z]{2})\]/
+             my @first  = _splitcoord(_rotate90(_splitcoord($2), $size));
+             my @second = _splitcoord(_rotate90(_splitcoord($3), $size));
+             my @northings = sort { $a cmp $b } ($first[0], $second[0]);
+             my @eastings  = sort { $a cmp $b } ($first[1], $second[1]);
+             "A${1}[$northings[0]$eastings[0]:$northings[1]$eastings[1]]"
+           /eg;
 
   $self->readText($text);
 
