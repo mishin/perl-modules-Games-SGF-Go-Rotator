@@ -1,1 +1,4 @@
+1.1     2010-12-09    Fix bug where only moves were rotated, but not
+                        stuff like AE[aa:ee]
+
 1.0     2010-05-15    Initial release

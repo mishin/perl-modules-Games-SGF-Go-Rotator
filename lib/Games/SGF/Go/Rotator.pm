@@ -5,7 +5,7 @@ use warnings;
 
 use base 'Games::SGF::Go';
 use vars qw($VERSION);
-$VERSION = '1.0';
+$VERSION = '1.1';
 
 =head1 NAME
 
@@ -52,7 +52,15 @@ sub rotate90 {
 
   (my $size = $text) =~ s/.*SZ\[(\d+)\].*/$1/gs;
 
-  $text =~ s/([BW])\[([a-z])([a-z])\]/$1."["._rotate90($2, $3, $size)."]"/eg;
+  # $text =~ s/([BW])\[([a-z])([a-z])\]/$1."["._rotate90($2, $3, $size)."]"/eg;
+
+  # doing this instead rotates stuff like AB[aa:ee]AE[bb:dd] as well
+  $text =~ s/\[([a-z][a-z])([\]:])/'['._rotate90(_splitcoord($1), $size).$2/eg;
+  # but now we have to "unrotate" what we turned C[oh] into
+  my $target = _rotate90(_splitcoord('oh'), $size);
+  $text =~ s/C\[$target\]/'C['.
+              _rotate90(_splitcoord(_rotate90(_splitcoord(_rotate90(_splitcoord($target), $size)), $size)), $size)
+            .']'/eg;
 
   $self->readText($text);
 
@@ -71,6 +79,9 @@ sub rotate90 {
 # c .....
 # d Z....
 # e ...Y.
+
+sub _splitcoord { return split(//, shift()) }
+
 sub _rotate90 {
   my($x, $y, $size) = @_;
   my @letters = (qw(a b c d e f g h i j k l m n o p q r s))[0 .. $size - 1];
@@ -102,6 +113,11 @@ with tests.
 =head1 SEE ALSO
 
 L<Games::SGF::Go>
+
+=head1 THANKS TO ...
+
+Daniel Gilder for pointing out the bug where stuff like AE[aa:ee]
+wasn't being rotated, and providing a fix.
 
 =head1 AUTHOR, COPYRIGHT and LICENCE
 
