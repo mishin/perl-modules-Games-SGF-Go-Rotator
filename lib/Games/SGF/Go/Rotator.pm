@@ -5,7 +5,7 @@ use warnings;
 
 use base 'Games::SGF::Go';
 use vars qw($VERSION);
-$VERSION = '1.2';
+$VERSION = '1.21';
 
 =head1 NAME
 

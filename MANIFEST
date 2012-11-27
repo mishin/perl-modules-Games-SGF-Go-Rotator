@@ -17,3 +17,4 @@ t/01-AE-AB-AW.t
 t/AE-AB-AW-180.sgf
 t/AE-AB-AW-90.sgf
 t/AE-AB-AW.sgf
+t/lib/Games/SGF/Go/Rotator/Test.pm
